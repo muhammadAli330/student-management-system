@@ -1,0 +1,25 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f4f6f8; color: #222; }
+nav { background: #222; padding: 20px 0; }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+.nav-inner { display: flex; align-items: center; gap: 25px; }
+nav h2 { color: white; margin-right: auto; }
+nav a { color: white; text-decoration: none; }
+.content { padding: 40px 0; }
+.header { display: flex; justify-content: space-between; align-items: center; }
+.btn { background: #222; color: white; padding: 12px 18px; text-decoration: none; border-radius: 6px; }
+.search-box { margin: 30px 0; display: flex; gap: 10px; }
+.search-box input { width: 300px; padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
+button { padding: 12px 20px; border: none; background: #222; color: white; border-radius: 5px; cursor: pointer; }
+.table-box { background: white; padding: 20px; border-radius: 8px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px; border-bottom: 1px solid #ddd; text-align: left; }
+.edit { color: blue; text-decoration: none; margin-right: 10px; }
+.delete { color: red; text-decoration: none; }
+.employee-form { background: white; padding: 30px; max-width: 600px; border-radius: 8px; }
+.employee-form label { display: block; margin-top: 15px; margin-bottom: 5px; }
+.employee-form input { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; }
+.employee-form button { margin-top: 25px; }
+.delete-box { background: white; padding: 30px; max-width: 500px; border-radius: 8px; }
+.delete-button { background: red; margin-right: 15px; }
+.delete-box a { text-decoration: none; }

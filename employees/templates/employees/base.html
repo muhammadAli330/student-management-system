@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+    <link rel="stylesheet" href="{% static 'employees/style.css' %}">
+</head>
+<body>
+<nav>
+    <div class="container nav-inner">
+        <h2>Employee Management System</h2>
+        <a href="{% url 'employee_list' %}">Employees</a>
+        <a href="{% url 'employee_create' %}">Add Employee</a>
+        <a href="/admin/">Admin</a>
+    </div>
+</nav>
+<div class="container content">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>

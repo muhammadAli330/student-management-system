@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Student Management</title>
+  </head>
+
+  <body>
+    <h1>Student Management</h1>
+
+    ```
+    <form method="GET">
+      <input
+        type="text"
+        name="search"
+        value="{{ search }}"
+        placeholder="Search student by name"
+      />
+
+      <button type="submit">Search</button>
+    </form>
+
+    <br />
+
+    <a href="{% url 'student_create' %}">Add Student</a>
+
+    <br /><br />
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Course</th>
+          <th>Semester</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for student in students %}
+
+        <tr>
+          <td>{{ student.name }}</td>
+          <td>{{ student.email }}</td>
+          <td>{{ student.phone }}</td>
+          <td>{{ student.course }}</td>
+          <td>{{ student.semester }}</td>
+
+          <td>
+            <a href="{% url 'student_update' student.id %}"> Edit </a>
+
+            <a href="{% url 'student_delete' student.id %}"> Delete </a>
+          </td>
+        </tr>
+
+        {% empty %}
+
+        <tr>
+          <td colspan="6">No students found.</td>
+        </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <br />
+
+    <!-- Pagination -->
+
+    <div>
+      {% if students.has_previous %}
+      <a href="?page={{ students.previous_page_number }}&search={{ search }}">
+        Previous
+      </a>
+      {% endif %}
+
+      <span>
+        Page {{ students.number }} of {{ students.paginator.num_pages }}
+      </span>
+
+      {% if students.has_next %}
+      <a href="?page={{ students.next_page_number }}&search={{ search }}">
+        Next
+      </a>
+      {% endif %}
+    </div>
+    ```
+  </body>
+</html>
